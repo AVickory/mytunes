@@ -21,9 +21,11 @@ var AppModel = Backbone.Model.extend({
       this.get('songQueue').addSong(song);
     }, this);
 
-    this.get('songQueue').on('playFirst', function (song) {
-      this.set('currentSong', song);
-    }, this);
+    // this.get('songQueue').on('play', function (song) {
+    //   console.log(4)
+    //   this.set('currentSong', song);
+    //   console.log(5)
+    // }, this);
 
   },
 
