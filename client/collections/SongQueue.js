@@ -14,28 +14,30 @@ var SongQueue = Songs.extend({
     });
 
     this.on('dequeue', function (song) {
-      if(this.length) {
+      if(this.length >= 1) {
         this.remove(song);
       }
-      if(this.length){
+      if(this.length >= 1){
         this.playFirst();  
+      } else {
+        this.trigger('stop')
       }
 
     }, this)
   },
 
   addSong: function (song) {
+    // var len = this.length;
     this.add(song);
+    // if(this.length !== len) {
+    //   if(this.get('count') >= 1) {
+    //     console.log(this.count)
+    //     song.set('count', this.get('count') + 1);
+    //   } else {
+    //     song.set('count', 1);
+    //   }
+    // }
   },
-
-  // dequeue: function (currentSong) {
-  //   console.log(99)
-  //   this.remove(this.at(0));
-  //   if(this.length){
-  //     this.playFirst();  
-  //   }
-  //   console.log(2)
-  // },
 
   playFirst: function () {
     //this.trigger('playFirst', this.at(0));

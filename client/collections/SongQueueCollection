@@ -1,0 +1,12 @@
+var SongQueueView = Backbone.Collection.extend({
+
+  model: SongQueue,
+
+  initialize: function () {
+    this.add()
+  }
+
+
+
+
+}
